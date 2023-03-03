@@ -34,6 +34,5 @@ function writeToFile(path, content) {
           console.error(err);
         }
         console.log('HTML file created successfully with the following content:');
-		console.log(readAllText(outputPath));
       });
 }
