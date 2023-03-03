@@ -5,10 +5,8 @@ const readline = require('readline').createInterface({
 
 const fs = require('fs');
 
-readline.question('Please specify the file to convert to HTML.', path => {
-    processFileContent(path);
-    readline.close();
-});
+var path = 'data.txt';
+processFileContent(path);
 
 function processFileContent(path) {
     var inputText = readAllText(path);
@@ -35,6 +33,7 @@ function writeToFile(path, content) {
         if (err) {
           console.error(err);
         }
-        console.log('HTML file created successfully.');
+        console.log('HTML file created successfully with the following content:');
+		console.log(readAllText(outputPath));
       });
 }
